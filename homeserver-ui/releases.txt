@@ -1,1 +1,3 @@
-x.x.x
+0.1.0
+
+Initial release, total work in progress
