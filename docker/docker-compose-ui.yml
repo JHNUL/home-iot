@@ -4,7 +4,7 @@ include:
 
 services:
   ui:
-    image: juhanir/homeserver-ui:1.0.0-SNAPSHOT
+    image: juhanir/homeserver-ui:0.1.0
     ports:
       - "80:80"
     networks:
