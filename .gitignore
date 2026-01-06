@@ -5,3 +5,5 @@
 **/*.env
 **/*.quarkus
 docker/*.sql
+**/CLAUDE.md
+**/.claude
