@@ -2,10 +2,13 @@ package org.juhanir.domain.sensordata.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "location", schema = "sensor")
@@ -60,4 +63,91 @@ public class Location extends BaseEntity {
     @Column(name = "ui_specification", columnDefinition = "TEXT") // PostgreSQL TEXT type
     private String uiSpecification;
 
+    @ManyToMany(mappedBy = "locations")
+    private Set<Device> devices = new HashSet<>();
+
+    public String getName() {
+        return name;
+    }
+
+    public Location setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Location setType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public Location setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    public Instant getModifiedAt() {
+        return modifiedAt;
+    }
+
+    public Location setModifiedAt(Instant modifiedAt) {
+        this.modifiedAt = modifiedAt;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Location setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public Double getSpace() {
+        return space;
+    }
+
+    public Location setSpace(Double space) {
+        this.space = space;
+        return this;
+    }
+
+    public String getUiSpecification() {
+        return uiSpecification;
+    }
+
+    public Location setUiSpecification(String uiSpecification) {
+        this.uiSpecification = uiSpecification;
+        return this;
+    }
+
+    public Set<Device> getDevices() {
+        return devices;
+    }
+
+    public Location setDevices(Set<Device> devices) {
+        this.devices = devices;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "uiSpecification='" + uiSpecification + '\'' +
+                ", space=" + space +
+                ", description='" + description + '\'' +
+                ", modifiedAt=" + modifiedAt +
+                ", createdAt=" + createdAt +
+                ", type='" + type + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

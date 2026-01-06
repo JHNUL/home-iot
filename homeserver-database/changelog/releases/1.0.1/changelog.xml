@@ -8,7 +8,9 @@
 
     <changeSet id="homeserver_${tag_1767702682}" author="homeserver">
         <sqlFile path="101_create_table_location.sql" relativeToChangelogFile="true" stripComments="true"/>
-        <sqlFile path="101_alter_table_device.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="101_create_table_device_location.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="101_create_schema_access.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="101_create_table_group_device.sql" relativeToChangelogFile="true" stripComments="true"/>
     </changeSet>
 
     <changeSet id="tag_${tag_1767702682}" author="homeserver">

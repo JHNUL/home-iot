@@ -14,6 +14,12 @@ Image is pushed to docker hub repository `juhanir/liquibase-migrator`.
 
 For sensor data, the timestamp should be consistently named `measurement_time`.
 
+### Visibility
+
+Visibility (who can see what) should not live at the data model but rather be resolved at the query boundary.
+For this reason the schema 'access' exists. Queries should enter the graph from this access point. This means
+joins to the access table(s), not filtering after querying everything. Create views to simplify querying.
+
 ## Query performance
 
 Time series data should be queried _fast_. That means storing it in hypertables with appropriate indices and chunking intervals. Hypertable information is found in the `timescaledb_information` schema that TimescaleDB creates.

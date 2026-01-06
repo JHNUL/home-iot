@@ -33,10 +33,11 @@ In `./docker`:
 - bash recommended (bash-isms can and do occur in scripts)
 
 Long story short, use the script `run.sh` at project root. This will spin up the entire environment.
-Navigate to `http://localhost`. A test user with credentials testuser:testuser123 is created automatically
-that you can log in with.
+Navigate to `http://localhost`. A test user with credentials testadmin:testadmin123 is created automatically
+that you can log in with. Admin user can see all devices and (when implemented) assign devices to users
+via groups. Regular user should not see anything that they have not been assigned.
 
-Use `homeserver-ui/mqtt_seeder.sh` to send some data.
+Use `homeserver-ui/mqtt_seeder.sh` to seed some data.
 
 ### Development environment
 
