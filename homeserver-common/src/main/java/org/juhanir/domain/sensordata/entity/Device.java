@@ -47,6 +47,13 @@ public class Device extends BaseEntity {
     private Boolean isDisabled;
 
     /**
+     * Location reference
+     */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location")
+    private Location location;
+
+    /**
      * The signal data readings belonging to this device.
      */
     @OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
