@@ -1,6 +1,6 @@
 services:
   database:
-    image: timescale/timescaledb:latest-pg17
+    image: timescale/timescaledb:2.24.0-pg17@sha256:8ab414f7f73fd47dfa643097f1a753e2ac009c70fcb0de5717d0e79d21e7b7d6
     ports:
       - "54322:5432"
     env_file:
@@ -11,7 +11,7 @@ services:
       - homeserver-network
 
   kc-database:
-    image: postgres:17.5-bookworm
+    image: postgres:17.7-trixie@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
     ports:
       - "54321:5431"
     env_file:
@@ -22,7 +22,7 @@ services:
       - homeserver-network
 
   broker:
-    image: eclipse-mosquitto:2.0.21
+    image: eclipse-mosquitto:2.0.22@sha256:077fe4ff4c49df1e860c98335c77dda08360629e0e2a718147027e4db3eace9d
     ports:
       - "1883:1883"
     volumes:

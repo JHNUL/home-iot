@@ -4,8 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "device", schema = "sensor")
@@ -45,6 +47,15 @@ public class Device extends BaseEntity {
     @NotNull
     @Column(name = "is_disabled")
     private Boolean isDisabled;
+
+    @ManyToMany
+    @JoinTable(
+            name = "device_location",
+            schema = "sensor",
+            joinColumns = @JoinColumn(name = "device_id"),
+            inverseJoinColumns = @JoinColumn(name = "location_id")
+    )
+    private Set<Location> locations = new HashSet<>();
 
     /**
      * The signal data readings belonging to this device.
@@ -116,6 +127,15 @@ public class Device extends BaseEntity {
     @Override
     public int hashCode() {
         return Objects.hash(identifier, deviceType);
+    }
+
+    public Set<Location> getLocations() {
+        return locations;
+    }
+
+    public Device setLocations(Set<Location> locations) {
+        this.locations = locations;
+        return this;
     }
 
     @Override
