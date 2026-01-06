@@ -44,6 +44,26 @@ Execution Time: 0.029 ms
 
 The previous example is legit. It shows that indices are being used and the correct chunk is being accessed, and no others.
 
+## Hypertable partitioning strategy
+
+### Current Configuration (sensor.signal_data)
+- Partitioning: Only by time dimension (`by_range('measurement_time')`)
+- Primary Key: Composite `(identifier, measurement_time)`
+- Index: Compound index on `(identifier, measurement_time)`
+
+### Space Partitioning Considerations
+
+#### Arguments Space Partitioning by Identifier:
+1. Query patterns: Composite primary key and index suggest queries frequently filter by `identifier` + time range
+2. Data locality: Device-specific data would be grouped together within time chunks
+3. Parallel execution: Queries for specific devices could leverage parallel chunk processing
+4. IoT scalability: With multiple sensors, space partitioning can improve performance
+
+#### Cons:
+1. Chunk proliferation: For a large number of devices it'll create many small chunks
+2. Management overhead: Each chunk is a separate PostgreSQL table
+3. TimescaleDB best practice: Chunks should ideally be >1GB; space partitioning might create smaller chunks
+
 ## Schema diagram
 
 Prerequisites:
