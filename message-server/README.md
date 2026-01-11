@@ -7,8 +7,16 @@ via WebSocket to subscribed clients. It also provides a REST API.
 
 Start the environment with docker compose as explained in the [repo root](../README.md).
 
-Log into keycloak (https://localhost:8443) with the admin credentials from the compose file.
-Get the client secret for the message-server client from Keycloak and copy it to application.properties
+Currently direct grant is enabled for easier development. It should not be enabled for
+production environment.
+
+### Client secret
+
+To use message-server with direct grant disabled, switch direct grant and public client to 
+false in the realm file `docker/homeserver-realm-dev.json`. After starting the docker compose stack,
+log into keycloak (http://localhost:8888) with the admin credentials that you set in the keycloak.env
+file. Get the client secret for the message-server client from Keycloak and copy it to application.properties
+or use as system property when starting the app.
 ```properties
 quarkus.oidc.credentials.secret={here}
 ```
