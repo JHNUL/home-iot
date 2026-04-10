@@ -1,4 +1,4 @@
-export type DeviceTypeName = "TEMPERATURE_HUMIDITY_SENSOR" | "TEMPERATURE_SENSOR"
+export type DeviceTypeName = "TEMPERATURE_HUMIDITY_SENSOR" | "TEMPERATURE_SENSOR";
 
 export type Device = {
     id: number;
@@ -7,4 +7,3 @@ export type Device = {
     createdAt: string;
     latestCommunication: string;
 };
-

@@ -1,5 +1,5 @@
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
-import { DeviceSignalData } from "../../features/deviceData/types";
+import type { DeviceSignalData } from "../../features/deviceData/types";
 import { CELSIUS_UNIT_SYMBOL } from "../constants";
 
 export type LineChartProps = {
@@ -8,7 +8,7 @@ export type LineChartProps = {
 
 type LineChartData = {
     name: string;
-    value: any;
+    value: number;
 };
 
 // TODO: Use responsive container
@@ -28,7 +28,7 @@ export const HMLineChart: React.FC<LineChartProps> = ({ data }) => {
     return (
         <div style={{ width: "100%" }}>
             <LineChart
-                style={{ width: "100%", height: '100%' }}
+                style={{ width: "100%", height: "100%" }}
                 responsive
                 data={mappedData}
                 margin={{
@@ -40,7 +40,7 @@ export const HMLineChart: React.FC<LineChartProps> = ({ data }) => {
             >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" angle={90} label="time" tickMargin={120} />
-                <YAxis dataKey="value" label={CELSIUS_UNIT_SYMBOL} tickMargin={12}/>
+                <YAxis dataKey="value" label={CELSIUS_UNIT_SYMBOL} tickMargin={12} />
                 <Tooltip />
                 <Line
                     connectNulls

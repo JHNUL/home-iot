@@ -19,7 +19,7 @@ public class SignalDataQueryBuilderTest {
                 .and()
                 .and()
                 .or()
-                .beforeTime("2020-10-10T10:10:10Z", true)
+                .beforeTime(Instant.parse("2020-10-10T10:10:10Z"), true)
                 .build();
         assertEquals("SELECT s FROM SignalData s JOIN FETCH s.device WHERE s.device.identifier IN :identifiers AND s.measurementTime <= :to", q.query());
         assertEquals(Instant.parse("2020-10-10T10:10:10Z"), q.params().get("to"));
@@ -32,9 +32,9 @@ public class SignalDataQueryBuilderTest {
                 .create()
                 .fromDevices(List.of(IDENTIFIER, "foo"))
                 .and()
-                .afterTime("2023-01-01T00:00:00Z", false)
+                .afterTime(Instant.parse("2023-01-01T00:00:00Z"), false)
                 .or()
-                .beforeTime("2024-01-01T00:00:00Z", true)
+                .beforeTime(Instant.parse("2024-01-01T00:00:00Z"), true)
                 .build();
 
         assertEquals(
@@ -53,9 +53,9 @@ public class SignalDataQueryBuilderTest {
                 .create()
                 .fromDevices(List.of())
                 .and()
-                .afterTime("2023-01-01T00:00:00Z", false)
+                .afterTime(Instant.parse("2023-01-01T00:00:00Z"), false)
                 .or()
-                .beforeTime("2024-01-01T00:00:00Z", true)
+                .beforeTime(Instant.parse("2024-01-01T00:00:00Z"), true)
                 .build();
 
         assertEquals(
@@ -87,11 +87,11 @@ public class SignalDataQueryBuilderTest {
     void emptyDevicesListInTheMiddle() {
         var q = SignalDataQueryBuilder
                 .create()
-                .afterTime("2023-01-01T00:00:00Z", false)
+                .afterTime(Instant.parse("2023-01-01T00:00:00Z"), false)
                 .and()
                 .fromDevices(List.of())
                 .and()
-                .beforeTime("2024-01-01T00:00:00Z", true)
+                .beforeTime(Instant.parse("2024-01-01T00:00:00Z"), true)
                 .build();
 
         assertEquals(
@@ -111,7 +111,7 @@ public class SignalDataQueryBuilderTest {
             SignalDataQueryBuilder
                     .create()
                     .fromDevices(List.of(IDENTIFIER))
-                    .beforeTime("2020-10-10T10:10:10Z", true)
+                    .beforeTime(Instant.parse("2020-10-10T10:10:10Z"), true)
                     .build();
         });
     }

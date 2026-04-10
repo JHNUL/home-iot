@@ -6,8 +6,7 @@ import { selectUsername } from "../common/authentication/authSlice";
 export const Header: React.FC = () => {
     const userName = useAppSelector(selectUsername);
 
-    const initials = (userName.givenName ?? "").charAt(0) + 
-        (userName.familyName ?? "").charAt(0)
+    const initials = (userName.givenName ?? "").charAt(0) + (userName.familyName ?? "").charAt(0);
 
     return (
         <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b dark:bg-slate-900/75 dark:border-slate-800">
@@ -65,7 +64,10 @@ export const Header: React.FC = () => {
                     {/* Right: actions */}
                     <div className="flex items-center gap-3">
                         <nav className="hidden sm:flex items-center gap-2">
-                            <Link to="/" className="text-sm px-3 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <Link
+                                to="/"
+                                className="text-sm px-3 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
+                            >
                                 Devices
                             </Link>
                         </nav>

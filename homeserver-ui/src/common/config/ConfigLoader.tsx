@@ -46,7 +46,9 @@ export const ConfigLoader: React.FC<{ children: ReactNode }> = ({ children }) =>
 
     allRequiredVariables.forEach(envVar => {
         if (typeof import.meta.env[envVar] !== "string") {
-            throw Error(`Cannot start application, missing variable ${envVar.replace("VITE_", "")}`);
+            throw Error(
+                `Cannot start application, missing variable ${envVar.replace("VITE_", "")}`,
+            );
         }
     });
 
@@ -73,7 +75,7 @@ export const ConfigLoader: React.FC<{ children: ReactNode }> = ({ children }) =>
         return null;
     }
 
-    console.info(`Config initialized \n${JSON.stringify(config, null, 2)}`)
+    console.info(`Config initialized \n${JSON.stringify(config, null, 2)}`);
 
     return <>{children}</>;
 };

@@ -1,3 +1,1 @@
-
-
-export const CELSIUS_UNIT_SYMBOL = "C°"
+export const CELSIUS_UNIT_SYMBOL = "C°";
