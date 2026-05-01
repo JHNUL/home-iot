@@ -10,6 +10,8 @@ Start the environment with docker compose as explained in the [repo root](../REA
 Currently direct grant is enabled for easier development. It should not be enabled for
 production environment.
 
+Use [request_util](./request_util) to make authenticated requests to endpoints directly.
+
 ### Client secret
 
 To use message-server with direct grant disabled, switch direct grant and public client to 
