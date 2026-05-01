@@ -16,7 +16,7 @@ import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 
-public abstract class QuarkusTestUtils {
+public abstract class MessageServerTestBase {
 
     /**
      * Test users are created by default by importing a dev/test realm via docker compose.
