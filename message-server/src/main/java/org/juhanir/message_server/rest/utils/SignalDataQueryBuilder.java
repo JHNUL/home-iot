@@ -39,19 +39,19 @@ public final class SignalDataQueryBuilder {
         return this;
     }
 
-    public SignalDataQueryBuilder afterTime(String from, boolean inclusive) {
+    public SignalDataQueryBuilder afterTime(Instant from, boolean inclusive) {
         if (from == null) return handleNullParam();
         String op = inclusive ? ">=" : ">";
         doAppend("s.measurementTime", op, "from");
-        parameters.putIfAbsent("from", Instant.parse(from));
+        parameters.putIfAbsent("from", from);
         return this;
     }
 
-    public SignalDataQueryBuilder beforeTime(String to, boolean inclusive) {
+    public SignalDataQueryBuilder beforeTime(Instant to, boolean inclusive) {
         if (to == null) return handleNullParam();
         String op = inclusive ? "<=" : "<";
         doAppend("s.measurementTime", op, "to");
-        parameters.putIfAbsent("to", Instant.parse(to));
+        parameters.putIfAbsent("to", to);
         return this;
     }
 

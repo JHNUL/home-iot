@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import type { JSX } from "react";
 import { useParams } from "react-router";
 import { HMLineChart } from "../../common/chart/HMLineChart";
 import { useGetDeviceDataQuery } from "./deviceDataApiSlice";
@@ -11,7 +11,7 @@ export const DeviceData = (): JSX.Element => {
         <div>
             <div className="container-card">
                 <h2 className="text-lg font-semibold mb-4">Signal Data for {deviceIdentifier}</h2>
-                {data && <HMLineChart data={data}/>}
+                {data && <HMLineChart data={data} />}
             </div>
         </div>
     );

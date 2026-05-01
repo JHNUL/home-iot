@@ -5,6 +5,7 @@ import reactPlugin from "eslint-plugin-react";
 import globals from "globals";
 import { config, configs } from "typescript-eslint";
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated -- defineConfig() not available in this version
 const eslintConfig = config(
     {
         name: "global-ignores",
@@ -29,7 +30,7 @@ const eslintConfig = config(
     vitestPlugin.configs.recommended,
     {
         name: "eslint-plugin-react/jsx-runtime",
-        ...reactPlugin.configs,
+        ...reactPlugin.configs.flat["jsx-runtime"],
     },
     {
         name: "main",

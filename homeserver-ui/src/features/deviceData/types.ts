@@ -4,4 +4,4 @@ export type DeviceSignalData = {
     temperatureFahrenheit: number;
     measurementTime: string;
     relativeHumidity: number;
-}
+};

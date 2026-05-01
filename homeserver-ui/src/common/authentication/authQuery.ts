@@ -1,5 +1,6 @@
-import { FetchArgs, BaseQueryApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { RootState } from "../../app/store";
+import type { FetchArgs, BaseQueryApi } from "@reduxjs/toolkit/query/react";
+import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { RootState } from "../../app/store";
 import { getKeycloak } from "./keycloakSingleton";
 
 export const authenticatedFetchBaseQuery = (args: FetchArgs, api: BaseQueryApi) => {

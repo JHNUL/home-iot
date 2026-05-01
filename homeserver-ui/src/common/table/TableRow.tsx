@@ -13,7 +13,6 @@ export const TableRow: React.FC<TableRowProps> = ({
     header = false,
     onClick,
 }) => {
-
     const columns = React.Children.toArray(children).filter(child =>
         React.isValidElement(child),
     ).length;
