@@ -34,8 +34,7 @@ In `./docker`:
 
 Long story short, use the script `run.sh` at project root. This will spin up the entire environment.
 Navigate to `http://localhost`. A test user with credentials testadmin:testadmin123 is created automatically
-that you can log in with. Admin user can see all devices and (when implemented) assign devices to users
-via groups. Regular user should not see anything that they have not been assigned.
+that you can log in with. Admin user can see all devices.
 
 Use `homeserver-ui/mqtt_seeder.sh` to seed some data.
 
