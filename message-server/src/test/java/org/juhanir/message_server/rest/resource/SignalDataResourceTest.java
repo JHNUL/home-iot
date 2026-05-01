@@ -8,7 +8,7 @@ import org.juhanir.domain.sensordata.entity.Device;
 import org.juhanir.domain.sensordata.entity.SignalData;
 import org.juhanir.message_server.MessageServerTestResource;
 import org.juhanir.message_server.rest.api.Role;
-import org.juhanir.message_server.utils.QuarkusTestUtils;
+import org.juhanir.message_server.utils.MessageServerTestBase;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @QuarkusTest
 @QuarkusTestResource(value = MessageServerTestResource.class)
-public class SignalDataResourceTest extends QuarkusTestUtils {
+public class SignalDataResourceTest extends MessageServerTestBase {
 
     @ParameterizedTest()
     @ValueSource(strings = {Role.USER, Role.ADMIN})

@@ -7,7 +7,7 @@ import org.juhanir.domain.sensordata.entity.DeviceTypeName;
 import org.juhanir.domain.sensordata.entity.SignalData;
 import org.juhanir.message_server.MessageServerTestResource;
 import org.juhanir.message_server.rest.api.Role;
-import org.juhanir.message_server.utils.QuarkusTestUtils;
+import org.juhanir.message_server.utils.MessageServerTestBase;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,7 +23,7 @@ import static org.juhanir.message_server.utils.TestConstants.DATETIME_PATTERN;
 
 @QuarkusTest
 @QuarkusTestResource(value = MessageServerTestResource.class)
-public class DeviceResourceTest extends QuarkusTestUtils {
+public class DeviceResourceTest extends MessageServerTestBase {
 
     @ParameterizedTest()
     @ValueSource(strings = {Role.USER, Role.ADMIN})

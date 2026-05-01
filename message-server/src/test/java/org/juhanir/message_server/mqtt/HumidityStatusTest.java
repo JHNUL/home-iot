@@ -9,7 +9,7 @@ import io.vertx.mutiny.mqtt.MqttClient;
 import org.juhanir.domain.sensordata.dto.outgoing.DeviceResponse;
 import org.juhanir.message_server.MessageServerTestResource;
 import org.juhanir.message_server.utils.AwaitUtils;
-import org.juhanir.message_server.utils.QuarkusTestUtils;
+import org.juhanir.message_server.utils.MessageServerTestBase;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +24,7 @@ import static org.juhanir.message_server.utils.TestConstants.DATETIME_PATTERN;
 
 @QuarkusTest
 @QuarkusTestResource(value = MessageServerTestResource.class)
-public class HumidityStatusTest extends QuarkusTestUtils {
+public class HumidityStatusTest extends MessageServerTestBase {
 
     private static MqttClient client;
 

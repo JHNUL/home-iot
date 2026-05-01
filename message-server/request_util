@@ -10,8 +10,8 @@ get_token() {
     -H "Content-Type: application/x-www-form-urlencoded" \
     -d "client_id=message-server" \
     -d "grant_type=password" \
-    -d "username=testuser" \
-    -d "password=testuser123" | jq '.access_token' | tr -d "\""
+    -d "username=testadmin" \
+    -d "password=testadmin123" | jq '.access_token' | tr -d "\""
 }
 
 url_encode() {
@@ -29,6 +29,20 @@ get_signal_data() {
     -w "\n"
 }
 
+assign_device() {
+  local token
+  local body="${1:-}"
+  token=$(get_token)
+  curl -v "http://localhost:8080/access/assign" \
+    --json "${body}" \
+    -H "Content-Type:application/json" \
+    -H "Authorization: Bearer ${token}" \
+    -w "\n"
+}
+
+
 if [[ "signal_data" == "${cmd}" ]]; then
   get_signal_data "${path}"
+elif [[ "assign_device" == "${cmd}" ]]; then
+  assign_device '{"deviceIdentifier": "foo", "groupName": "faa"}'
 fi

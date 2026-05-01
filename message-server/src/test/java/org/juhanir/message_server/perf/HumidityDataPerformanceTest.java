@@ -4,7 +4,7 @@ import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import org.juhanir.message_server.MessageServerTestResource;
 import org.juhanir.message_server.rest.api.Role;
-import org.juhanir.message_server.utils.QuarkusTestUtils;
+import org.juhanir.message_server.utils.MessageServerTestBase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Tag("performance")
 @QuarkusTest
 @QuarkusTestResource(value = MessageServerTestResource.class)
-public class HumidityDataPerformanceTest extends QuarkusTestUtils {
+public class HumidityDataPerformanceTest extends MessageServerTestBase {
 
     private static final int QUERY_NFR_TIME_LIMIT_MS = 500; // With authentication
     private static String identifier;

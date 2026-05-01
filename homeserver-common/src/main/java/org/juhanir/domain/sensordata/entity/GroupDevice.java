@@ -17,4 +17,29 @@ public class GroupDevice implements Serializable {
     @Column(name = "device_identifier")
     private String deviceIdentifier;
 
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public GroupDevice setGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+
+    public String getDeviceIdentifier() {
+        return deviceIdentifier;
+    }
+
+    public GroupDevice setDeviceIdentifier(String deviceIdentifier) {
+        this.deviceIdentifier = deviceIdentifier;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "GroupDevice{" +
+                "groupName='" + groupName + '\'' +
+                ", deviceIdentifier='" + deviceIdentifier + '\'' +
+                '}';
+    }
 }
