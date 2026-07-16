@@ -83,10 +83,22 @@ export const Header: React.FC = () => {
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5 text-slate-700 dark:text-slate-200"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                             >
-                                <path d="M10 2a1 1 0 00-1 1v1a1 1 0 102 0V3a1 1 0 00-1-1zM4.22 4.22a1 1 0 00-1.44 1.44l.71.71a1 1 0 001.44-1.44l-.71-.71zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm8 6a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM15.78 4.22l-.71.71a1 1 0 001.44 1.44l.71-.71a1 1 0 10-1.44-1.44zM17 9a1 1 0 100 2h1a1 1 0 100-2h-1zM4.22 15.78l.71-.71a1 1 0 10-1.44-1.44l-.71.71a1 1 0 001.44 1.44zM15.78 15.78a1 1 0 001.44-1.44l-.71-.71a1 1 0 10-1.44 1.44l.71.71z" />
+                                <circle cx="12" cy="12" r="5" />
+                                <path d="M12 1v2" />
+                                <path d="M12 21v2" />
+                                <path d="M4.22 4.22l1.42 1.42" />
+                                <path d="M18.36 18.36l1.42 1.42" />
+                                <path d="M1 12h2" />
+                                <path d="M21 12h2" />
+                                <path d="M4.22 19.78l1.42-1.42" />
+                                <path d="M18.36 5.64l1.42-1.42" />
                             </svg>
                         </button>
 
