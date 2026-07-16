@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <property name="tag_1784223693" value="1.0.2"/>
+
+    <changeSet id="homeserver_${tag_1784223693}" author="homeserver">
+        <sqlFile path="102_create_schema_calendar.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="102_create_table_tasks.sql" relativeToChangelogFile="true" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="tag_${tag_1784223693}" author="homeserver">
+        <tagDatabase tag="${tag_1784223693}"/>
+    </changeSet>
+
+</databaseChangeLog>
