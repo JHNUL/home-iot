@@ -11,6 +11,12 @@ export const SidePane: React.FC = () => {
                     >
                         Devices
                     </Link>
+                    <Link
+                        to="/calendar"
+                        className="px-2 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700"
+                    >
+                        Calendar
+                    </Link>
                 </nav>
             </div>
         </aside>
