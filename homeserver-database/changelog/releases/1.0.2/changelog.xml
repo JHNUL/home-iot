@@ -8,7 +8,7 @@
 
     <changeSet id="homeserver_${tag_1784223693}" author="homeserver">
         <sqlFile path="102_create_schema_calendar.sql" relativeToChangelogFile="true" stripComments="true"/>
-        <sqlFile path="102_create_table_tasks.sql" relativeToChangelogFile="true" stripComments="true"/>
+        <sqlFile path="102_create_table_task.sql" relativeToChangelogFile="true" stripComments="true"/>
     </changeSet>
 
     <changeSet id="tag_${tag_1784223693}" author="homeserver">
