@@ -40,9 +40,22 @@ assign_device() {
     -w "\n"
 }
 
+create_task() {
+  local token
+  local body="${1:-}"
+  token=$(get_token)
+  curl -v "http://localhost:8080/tasks" \
+      --json "${body}" \
+      -H "Content-Type:application/json" \
+      -H "Authorization: Bearer ${token}" \
+      -w "\n"
+}
+
 
 if [[ "signal_data" == "${cmd}" ]]; then
   get_signal_data "${path}"
 elif [[ "assign_device" == "${cmd}" ]]; then
   assign_device '{"deviceIdentifier": "foo", "groupName": "faa"}'
+elif [[ "create_task" == "${cmd}" ]]; then
+  create_task '{"description": "Do all the things."}'
 fi
